@@ -16,13 +16,20 @@ while True:
     building_type = input("Enter what type of building you want to make.\n"
                           "For commercial, enter 'C'.\n"
                           "For residential, enter 'R'.\n"
-                          "To exit, enter 'X'.\n").upper()
+                          "To exit, enter 'X'.\nType here: ").upper()
     if building_type == "X":
         break
+    elif building_type != "C" and building_type != "R":
+        print("Please enter a valid building type.")
     else:
-        while building_type != "C" or building_type != "R":
-            input("Please enter a valid building type.\n")
+        length = number_checker("Enter the length (metres) of the foundation slab: ")
+        width = number_checker("Enter the width (metres) of the foundation slab: ")
 
-length = int(input("Enter the length of the foundation slab: "))
-width = int(input("Enter the width of the foundation slab: "))
+        area = length * width
+        if building_type == "C":
+            volume = area * depth_commercial
+        elif building_type == "R":
+            volume = area * depth_residential
 
+        print(f"Area: {area} square metres")
+        print(f"Volume: {volume} cubic metres")
