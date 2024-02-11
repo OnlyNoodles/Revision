@@ -8,6 +8,7 @@ def number_checker(question):
         except ValueError:
             print(error)
 
+
 highest_grade = 0
 highest_grade_student = ""
 

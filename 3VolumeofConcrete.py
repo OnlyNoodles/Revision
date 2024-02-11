@@ -8,6 +8,7 @@ def number_checker(question):
         except ValueError:
             print(error)
 
+
 depth_commercial = 0.5
 depth_residential = 0.25
 volume = 0.0
